@@ -17,9 +17,9 @@ let firstNames = [
       let name2="";
       let chiffre2 = 0;
       let chiffre1 = 0;
-      let test=0;
+      let test=3;
 
-      console.log(typeof test);
+     
 
 
       function entierAleatoire(min, max)
@@ -52,13 +52,28 @@ let firstNames = [
                         );
 
 
+                        function filterInt(value) {
+                          if (/^[-+]?(\d+|Infinity)$/.test(value)) {
+                            return Number(value)
+                          } else {
+                            return NaN
+                          }
+                        }
+
+
+
                         function enreg_new_nom(){            
                           let nomaajouter = prompt("veuillez saisir un nom à insérer dans le tableau???");  
 
                           console.log(typeof nomaajouter);
                           console.log(typeof test);
 
-                        if((typeof nomaajouter)===(typeof test)){
+                         
+
+
+                          console.log(filterInt(nomaajouter)) ;
+                          
+                        if((filterInt(nomaajouter))===(filterInt(test))){
                           alert("vous n'avez pas saisi une chaine de caractéres");
 
                         }else{
@@ -78,3 +93,6 @@ let firstNames = [
                           console.log(firstNames);
                         
                         }
+
+
+                      

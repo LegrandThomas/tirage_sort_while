@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>D&eacute;l&eacute;gu&eacute;s</title>
     <link rel="stylesheet" href="random.css">
+
+
+    <script>
+        function check(){
+            var nbr=document.frm.nbr.value;
+            if (isNaN(nbr)){
+                document.getElementById("msg").innerHTML="vous avez entré une chaine de caractére";
+               console.log("vous avez entré une chaine de caractére");
+               
+                return false;
+            }else{
+                document.getElementById("msg").innerHTML="vous avez entré des nombres";
+                console.log("vous avez entré des nombres");
+                return true;
+               
+            }
+        }
+     </script>
 </head>
 <body>
     
@@ -25,6 +43,17 @@
     </p>
 <br><hr><br>
 
+
+<form name="frm" onsubmit="return check()" >
+    Entrez un nom: <input type="text" name="nbr"><input type="submit" value="submit"><br>
+    <span id="msg" style="color:red"></span>
+ </form>
+
+
+
+
+
+<br><hr><br>
 
     <button id="generate" class="button">Qui ?</button>
     <div id="randomNames"></div>
